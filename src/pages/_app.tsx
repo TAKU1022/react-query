@@ -1,8 +1,14 @@
 import type { AppProps } from 'next/app';
+import { FC } from 'react';
 import Head from 'next/head';
 import { Auth0Provider } from '@auth0/auth0-react';
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App: FC<AppProps> = ({ Component, pageProps }) => {
+  if (process.env.NODE_ENV === 'development') {
+    const MockServer = () => import('../mocks');
+    MockServer();
+  }
+
   const origin =
     typeof window !== 'undefined' && window.location.origin
       ? window.location.origin
