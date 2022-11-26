@@ -1,16 +1,19 @@
+import { FC } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { FC, useEffect } from 'react';
 
 export const Home: FC = () => {
-  useEffect(() => {
+  const { data, isLoading } = useQuery(['articles'], () =>
     axios
       .get(`${process.env.API_BASE_URL}/articles`)
-      .then((response) => console.log(response));
-  }, []);
+      .then((response) => response.data)
+  );
 
   return (
     <div>
       <h1>Home</h1>
+      {!isLoading &&
+        data.map((article: any) => <p key={article.title}>{article.title}</p>)}
     </div>
   );
 };
