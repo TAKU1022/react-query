@@ -11,7 +11,6 @@ export const DefaultLayout: FC<Props> = ({ children }) => {
     <div>
       <Header />
       <main>{children}</main>
-      <Footer />
     </div>
   );
 };
