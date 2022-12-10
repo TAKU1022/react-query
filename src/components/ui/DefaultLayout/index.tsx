@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
 import { Header } from '../Header';
-import { Footer } from '../Footer';
+
+import { Box, Container } from '@chakra-ui/react';
 
 type Props = {
   children: ReactNode;
@@ -8,9 +9,11 @@ type Props = {
 
 export const DefaultLayout: FC<Props> = ({ children }) => {
   return (
-    <div>
+    <Box>
       <Header />
-      <main>{children}</main>
-    </div>
+      <main>
+        <Container paddingY={10}>{children}</Container>
+      </main>
+    </Box>
   );
 };

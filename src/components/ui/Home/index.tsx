@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import Link from 'next/link';
+import NextLink from 'next/link';
+import { Box, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 
 export const Home: FC = () => {
   const { data, isLoading } = useQuery(['articles'], () =>
@@ -11,15 +12,23 @@ export const Home: FC = () => {
   );
 
   return (
-    <div>
-      <h1>Home</h1>
-      {!isLoading &&
-        data.map((article: any) => <p key={article.title}>{article.title}</p>)}
-      <ul>
-        <li>
-          <Link href="/default_form">form</Link>
-        </li>
-      </ul>
-    </div>
+    <>
+      <Heading textAlign={'center'} marginBottom={4}>
+        Home
+      </Heading>
+
+      <Box marginBottom={6}>
+        {!isLoading &&
+          data.map((article: any) => (
+            <Text key={article.title}>{article.title}</Text>
+          ))}
+      </Box>
+
+      <UnorderedList>
+        <ListItem>
+          <NextLink href="/default_form">default form</NextLink>
+        </ListItem>
+      </UnorderedList>
+    </>
   );
 };

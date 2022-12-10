@@ -1,3 +1,4 @@
+import { Button, Center, Heading, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { Form } from 'react-final-form';
 import { FormValue } from '../../../types';
@@ -9,17 +10,25 @@ export const DefaultForm: FC = () => {
   };
 
   return (
-    <div>
-      <h1>Form</h1>
+    <>
+      <Heading textAlign={'center'} marginBottom={4}>
+        Default Form
+      </Heading>
       <Form onSubmit={onSubmit}>
         {({ handleSubmit }) => (
           <form onSubmit={handleSubmit}>
-            <TextInput name="userName" />
-            <TextInput name="title" />
-            <button>Submit</button>
+            <VStack>
+              <TextInput name="userName" />
+              <TextInput name="title" />
+            </VStack>
+            <Center paddingTop={4}>
+              <Button type={'submit'} colorScheme={'teal'}>
+                Submit
+              </Button>
+            </Center>
           </form>
         )}
       </Form>
-    </div>
+    </>
   );
 };

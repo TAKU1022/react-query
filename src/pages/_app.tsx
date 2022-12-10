@@ -3,6 +3,7 @@ import { FC } from 'react';
 import Head from 'next/head';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ChakraProvider } from '@chakra-ui/react';
 
 const queryClient = new QueryClient();
 
@@ -31,7 +32,9 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         redirectUri={origin}
       >
         <QueryClientProvider client={queryClient}>
-          <Component {...pageProps} />
+          <ChakraProvider>
+            <Component {...pageProps} />
+          </ChakraProvider>
         </QueryClientProvider>
       </Auth0Provider>
     </>
