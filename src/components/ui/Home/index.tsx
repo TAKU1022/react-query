@@ -28,6 +28,9 @@ export const Home: FC = () => {
         <ListItem>
           <NextLink href="/default_form">default form</NextLink>
         </ListItem>
+        <ListItem>
+          <NextLink href="/sub_form">sub form</NextLink>
+        </ListItem>
       </UnorderedList>
     </>
   );

@@ -6,7 +6,7 @@ type Props = {
   name: string;
 };
 
-export const TextInput: FC<Props> = ({ name }) => {
+export const InputText: FC<Props> = ({ name }) => {
   return (
     <Field name={name}>
       {(fieldProps) => (
