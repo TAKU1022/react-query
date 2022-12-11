@@ -10,8 +10,11 @@ export const SignIn: FC = () => {
       <Heading textAlign={'center'} marginBottom={4}>
         SignIn
       </Heading>
+
       <Center>
-        <Button onClick={() => loginWithRedirect()}>sign in</Button>
+        <Button colorScheme={'teal'} onClick={() => loginWithRedirect()}>
+          sign in
+        </Button>
       </Center>
     </>
   );
