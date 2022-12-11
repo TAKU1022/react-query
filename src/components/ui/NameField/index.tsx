@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { FormType } from '../../../types';
 import { TextField } from '../TextField';
@@ -12,10 +12,6 @@ export const NameField: FC<Props> = ({ name }) => {
     register,
     formState: { errors },
   } = useFormContext<FormType>();
-
-  useEffect(() => {
-    console.log(errors);
-  }, [errors]);
 
   return (
     <TextField

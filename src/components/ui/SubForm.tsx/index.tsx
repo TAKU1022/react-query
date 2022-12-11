@@ -11,7 +11,7 @@ export const SubForm: FC = () => {
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = (formValue: any) => {
+  const onSubmit = (formValue: FormType) => {
     console.log(formValue);
   };
 

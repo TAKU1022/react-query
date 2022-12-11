@@ -5,7 +5,7 @@ import {
   FormLabel,
   Input,
 } from '@chakra-ui/react';
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { UseFormRegister } from 'react-hook-form';
 import { FormType } from '../../../types';
 
@@ -24,10 +24,6 @@ export const TextField: FC<Props> = ({
   errorMessage,
   register,
 }) => {
-  useEffect(() => {
-    console.log(errorMessage);
-  }, [errorMessage]);
-
   return (
     <FormControl isInvalid={!!errorMessage}>
       <FormLabel>{label}</FormLabel>
