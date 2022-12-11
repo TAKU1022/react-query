@@ -3,7 +3,7 @@ import { useFormContext } from 'react-hook-form';
 import { FormType } from '../../../types';
 import { TextField } from '../TextField';
 
-export const NameField: FC = () => {
+export const AgeField: FC = () => {
   const {
     register,
     formState: { errors },
@@ -11,10 +11,11 @@ export const NameField: FC = () => {
 
   return (
     <TextField
-      name={'name'}
-      type={'text'}
-      label={'氏名'}
-      errorMessage={errors.name?.message}
+      name={'age'}
+      type={'number'}
+      label={'年齢'}
+      helperText={'18-60'}
+      errorMessage={errors.age?.message}
       register={register}
     />
   );

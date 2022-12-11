@@ -11,6 +11,7 @@ import { FormType } from '../../../types';
 
 type Props = {
   name: keyof FormType;
+  type: string;
   label: string;
   helperText?: string;
   errorMessage?: string;
@@ -19,6 +20,7 @@ type Props = {
 
 export const TextField: FC<Props> = ({
   name,
+  type,
   label,
   helperText,
   errorMessage,
@@ -26,8 +28,10 @@ export const TextField: FC<Props> = ({
 }) => {
   return (
     <FormControl isInvalid={!!errorMessage}>
-      <FormLabel>{label}</FormLabel>
-      <Input type={'text'} {...register(name)} />
+      <FormLabel fontWeight={'bold'} color={errorMessage && '#E53E3E'}>
+        {label}
+      </FormLabel>
+      <Input type={type} {...register(name)} />
       {!errorMessage ? (
         <>{helperText && <FormHelperText>{helperText}</FormHelperText>}</>
       ) : (

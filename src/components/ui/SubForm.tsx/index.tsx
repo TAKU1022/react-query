@@ -5,6 +5,7 @@ import { FormType } from '../../../types';
 import { NameField } from '../NameField';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { formSchema } from '../../../config/formSchema';
+import { AgeField } from '../AgeField';
 
 export const SubForm: FC = () => {
   const formMethod = useForm<FormType>({
@@ -23,11 +24,12 @@ export const SubForm: FC = () => {
 
       <FormProvider {...formMethod}>
         <form onSubmit={formMethod.handleSubmit(onSubmit)}>
-          <VStack>
-            <NameField name={'name'} />
+          <VStack spacing={4}>
+            <NameField />
+            <AgeField />
           </VStack>
 
-          <Center paddingTop={4}>
+          <Center paddingTop={8}>
             <Button type="submit" colorScheme={'teal'}>
               送信
             </Button>
