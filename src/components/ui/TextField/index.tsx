@@ -13,6 +13,7 @@ type Props = {
   name: keyof FormType;
   type: string;
   label: string;
+  isError?: boolean;
   helperText?: string;
   errorMessage?: string;
   register: UseFormRegister<FormType>;
@@ -22,17 +23,18 @@ export const TextField: FC<Props> = ({
   name,
   type,
   label,
+  isError,
   helperText,
   errorMessage,
   register,
 }) => {
   return (
-    <FormControl isInvalid={!!errorMessage}>
-      <FormLabel fontWeight={'bold'} color={errorMessage && '#E53E3E'}>
+    <FormControl isInvalid={isError}>
+      <FormLabel fontWeight={'bold'} color={isError ? '#E53E3E' : undefined}>
         {label}
       </FormLabel>
       <Input type={type} {...register(name)} />
-      {!errorMessage ? (
+      {!isError ? (
         <>{helperText && <FormHelperText>{helperText}</FormHelperText>}</>
       ) : (
         <FormErrorMessage>{errorMessage}</FormErrorMessage>

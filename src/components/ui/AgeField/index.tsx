@@ -14,6 +14,7 @@ export const AgeField: FC = () => {
       name={'age'}
       type={'number'}
       label={'年齢'}
+      isError={!!errors.age}
       helperText={'18-60'}
       errorMessage={errors.age?.message}
       register={register}

@@ -14,6 +14,7 @@ export const NameField: FC = () => {
       name={'name'}
       type={'text'}
       label={'氏名'}
+      isError={!!errors.name}
       errorMessage={errors.name?.message}
       register={register}
     />
