@@ -1,10 +1,15 @@
 import { Button, Center, Heading, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { FormType } from '../../../types';
 import { NameField } from '../NameField';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { formSchema } from '../../../config/formSchema';
 
 export const SubForm: FC = () => {
-  const formMethod = useForm();
+  const formMethod = useForm<FormType>({
+    resolver: zodResolver(formSchema),
+  });
 
   const onSubmit = (formValue: any) => {
     console.log(formValue);
