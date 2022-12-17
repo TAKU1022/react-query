@@ -5,14 +5,22 @@ export const handlers = [
     return res(
       ctx.json([
         {
-          title: 'タイトルタイトル',
-          description: '説明説明説明説明説明説明説明説明説明説明',
-          createdAt: new Date().toISOString(),
+          text: 'テキストテキスト',
+          width: 100,
+          height: 100,
+          isOwner: false,
+          position: 'top',
+          photoUrl: null,
+          tookAt: null,
         },
         {
-          title: 'タイトル2タイトル2',
-          description: '説明2説明2説明2説明2説明2説明2説明2説明2説明2説明2',
-          createdAt: new Date().toISOString(),
+          text: 'テキスト2テキスト2',
+          width: 200,
+          height: 200,
+          isOwner: true,
+          position: 'middle',
+          photoUrl: null,
+          tookAt: null,
         },
       ])
     );

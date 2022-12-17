@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { AuthGuard } from '../components/AuthGuard';
-import { DefaultLayout } from '../components/ui/DefaultLayout';
-import { Home } from '../components/ui/Home';
+import { DefaultLayout } from '../components/DefaultLayout';
+import { Home } from '../components/Home';
 
 const HomePage: NextPage = () => {
   return (

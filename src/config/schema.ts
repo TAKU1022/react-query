@@ -10,7 +10,10 @@ export const formSchema = z
       .string()
       .min(1, { message: '詳細テキストを入力してください' })
       .max(600, { message: '600文字以内で入力してください' }),
-    sportList: z.string().array(),
+    sportList: z
+      .string()
+      .array()
+      .refine((sportList) => !!sportList.length),
     fruit: z.string().min(1, { message: '果物を選択してください' }),
     email: z
       .string()
@@ -33,3 +36,21 @@ export const formSchema = z
   );
 
 export type FormType = z.infer<typeof formSchema>;
+
+export const apiSchema = z
+  .object({
+    text: z.string(),
+    width: z.number(),
+    height: z.number(),
+    isOwner: z.boolean(),
+    position: z.union([
+      z.literal('top'),
+      z.literal('middle'),
+      z.literal('bottom'),
+    ]),
+    photoUrl: z.string().nullable(),
+    tookAt: z.string().nullable(),
+  })
+  .array();
+
+export type DummyApiType = z.infer<typeof apiSchema>;

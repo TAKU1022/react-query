@@ -1,5 +1,5 @@
 import { Button, Center, Heading, VStack } from '@chakra-ui/react';
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { formSchema, FormType } from '../../config/schema';
@@ -10,6 +10,7 @@ import { SportListField } from '../SportListField';
 import { FruitField } from '../FruitField';
 import { EmailField } from '../EmailField';
 import { DateField } from '../DateField';
+import { fetchArticles } from '../../api';
 
 export const SubForm: FC = () => {
   const formMethod = useForm<FormType>({
@@ -21,10 +22,6 @@ export const SubForm: FC = () => {
     console.log(formValue);
   };
 
-  useEffect(() => {
-    console.log(formMethod.formState.errors);
-  }, [formMethod.formState.errors]);
-
   return (
     <>
       <Heading textAlign={'center'} marginBottom={4}>
@@ -32,7 +29,11 @@ export const SubForm: FC = () => {
       </Heading>
 
       <FormProvider {...formMethod}>
-        <form noValidate={true} onSubmit={formMethod.handleSubmit(onSubmit)}>
+        <form
+          noValidate={true}
+          autoComplete={'off'}
+          onSubmit={formMethod.handleSubmit(onSubmit)}
+        >
           <VStack spacing={4}>
             <TitleField />
             <DescriptionField />
@@ -50,6 +51,12 @@ export const SubForm: FC = () => {
           </Center>
         </form>
       </FormProvider>
+
+      <Center marginTop={8}>
+        <Button type="button" colorScheme={'teal'} onClick={fetchArticles}>
+          Fetch Articles
+        </Button>
+      </Center>
     </>
   );
 };
