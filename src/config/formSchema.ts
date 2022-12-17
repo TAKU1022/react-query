@@ -9,6 +9,11 @@ export const formSchema = z.object({
     .string()
     .min(1, { message: '詳細テキストを入力してください' })
     .max(600, { message: '600文字以内で入力してください' }),
+  sportList: z
+    .string()
+    .array()
+    .nonempty({ message: 'スポーツを選択してください' }),
+  isDraft: z.boolean(),
 });
 
 export type FormType = z.infer<typeof formSchema>;

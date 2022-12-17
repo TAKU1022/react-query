@@ -1,19 +1,26 @@
 import { Button, Center, Heading, VStack } from '@chakra-ui/react';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { formSchema, FormType } from '../../config/formSchema';
 import { TitleField } from '../TitleField';
 import { DescriptionField } from '../DescriptionField';
+import { DraftField } from '../DraftField';
+import { SportListField } from '../SportListField';
 
 export const SubForm: FC = () => {
   const formMethod = useForm<FormType>({
+    defaultValues: { sportList: [] },
     resolver: zodResolver(formSchema),
   });
 
   const onSubmit = (formValue: FormType) => {
     console.log(formValue);
   };
+
+  useEffect(() => {
+    console.log(formMethod.formState.errors);
+  }, [formMethod.formState.errors]);
 
   return (
     <>
@@ -26,6 +33,8 @@ export const SubForm: FC = () => {
           <VStack spacing={4}>
             <TitleField />
             <DescriptionField />
+            <SportListField />
+            <DraftField />
           </VStack>
 
           <Center paddingTop={8}>
