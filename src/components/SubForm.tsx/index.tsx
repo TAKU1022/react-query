@@ -1,11 +1,10 @@
 import { Button, Center, Heading, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { FormType } from '../../../types';
-import { NameField } from '../NameField';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { formSchema } from '../../../config/formSchema';
-import { AgeField } from '../AgeField';
+import { formSchema, FormType } from '../../config/formSchema';
+import { TitleField } from '../TitleField';
+import { DescriptionField } from '../DescriptionField';
 
 export const SubForm: FC = () => {
   const formMethod = useForm<FormType>({
@@ -19,14 +18,14 @@ export const SubForm: FC = () => {
   return (
     <>
       <Heading textAlign={'center'} marginBottom={4}>
-        Sub Form
+        Form
       </Heading>
 
       <FormProvider {...formMethod}>
-        <form onSubmit={formMethod.handleSubmit(onSubmit)}>
+        <form noValidate={true} onSubmit={formMethod.handleSubmit(onSubmit)}>
           <VStack spacing={4}>
-            <NameField />
-            <AgeField />
+            <TitleField />
+            <DescriptionField />
           </VStack>
 
           <Center paddingTop={8}>

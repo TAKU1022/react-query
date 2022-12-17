@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { FormType } from '../../../types';
+import { FormType } from '../../config/formSchema';
 import { TextField } from '../TextField';
 
-export const NameField: FC = () => {
+export const TitleField: FC = () => {
   const {
     register,
     formState: { errors },
@@ -11,11 +11,11 @@ export const NameField: FC = () => {
 
   return (
     <TextField
-      name={'name'}
+      name={'title'}
       type={'text'}
-      label={'氏名'}
-      isError={!!errors.name}
-      errorMessage={errors.name?.message}
+      label={'タイトル'}
+      isError={!!errors.title}
+      errorMessage={errors.title?.message}
       register={register}
     />
   );

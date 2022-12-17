@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { AuthGuard } from '../components/container/AuthGuard';
+import { AuthGuard } from '../components/AuthGuard';
 import { DefaultLayout } from '../components/ui/DefaultLayout';
 import { Home } from '../components/ui/Home';
 

@@ -1,7 +1,7 @@
 import { Button, Center, Heading, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { Form } from 'react-final-form';
-import { FormValue } from '../../../types';
+import { FormValue } from '../../types';
 import { InputText } from '../InputText.tsx';
 
 export const DefaultForm: FC = () => {

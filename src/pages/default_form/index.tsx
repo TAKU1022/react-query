@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
-import { AuthGuard } from '../../components/container/AuthGuard';
-import { DefaultForm } from '../../components/ui/DefaultForm.tsx';
-import { DefaultLayout } from '../../components/ui/DefaultLayout';
+import { AuthGuard } from '../../components/AuthGuard';
+import { DefaultForm } from '../../components/DefaultForm.tsx';
+import { DefaultLayout } from '../../components/DefaultLayout';
 
 const DefaultFormPage: NextPage = () => {
   return (

@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
-import { GuestGuard } from '../../components/container/GuestGuard';
-import { DefaultLayout } from '../../components/ui/DefaultLayout';
-import { SignIn } from '../../components/ui/SignIn';
+import { DefaultLayout } from '../../components/DefaultLayout';
+import { GuestGuard } from '../../components/GuestGuard';
+import { SignIn } from '../../components/SignIn';
 
 const SignInPage: NextPage = () => {
   return (

@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
-import { AuthGuard } from '../../components/container/AuthGuard';
-import { SubForm } from '../../components/ui/SubForm.tsx';
-import { DefaultLayout } from '../../components/ui/DefaultLayout';
+import { AuthGuard } from '../../components/AuthGuard';
+import { DefaultLayout } from '../../components/DefaultLayout';
+import { SubForm } from '../../components/SubForm.tsx';
 
 const SubFormPage: NextPage = () => {
   return (
