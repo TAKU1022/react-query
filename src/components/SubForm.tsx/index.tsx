@@ -8,6 +8,8 @@ import { DescriptionField } from '../DescriptionField';
 import { DraftField } from '../DraftField';
 import { SportListField } from '../SportListField';
 import { FruitField } from '../FruitField';
+import { EmailField } from '../EmailField';
+import { DateField } from '../DateField';
 
 export const SubForm: FC = () => {
   const formMethod = useForm<FormType>({
@@ -36,6 +38,8 @@ export const SubForm: FC = () => {
             <DescriptionField />
             <SportListField />
             <FruitField />
+            <EmailField />
+            <DateField />
             <DraftField />
           </VStack>
 
