@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { FormType } from '../../config/formSchema';
-import { TextField } from '../TextField';
+import { TextAreaField } from '../TextAreaField';
 
 export const DescriptionField: FC = () => {
   const {
@@ -10,9 +10,8 @@ export const DescriptionField: FC = () => {
   } = useFormContext<FormType>();
 
   return (
-    <TextField
+    <TextAreaField
       name={'description'}
-      type={'text'}
       label={'詳細テキスト'}
       isError={!!errors.description}
       errorMessage={errors.description?.message}

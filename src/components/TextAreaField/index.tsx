@@ -3,7 +3,7 @@ import {
   FormErrorMessage,
   FormHelperText,
   FormLabel,
-  Input,
+  Textarea,
 } from '@chakra-ui/react';
 import { FC } from 'react';
 import { UseFormRegister } from 'react-hook-form';
@@ -11,7 +11,6 @@ import { FormType } from '../../config/formSchema';
 
 type Props = {
   name: keyof FormType;
-  type: string;
   label: string;
   isError?: boolean;
   helperText?: string;
@@ -19,9 +18,8 @@ type Props = {
   register: UseFormRegister<FormType>;
 };
 
-export const TextField: FC<Props> = ({
+export const TextAreaField: FC<Props> = ({
   name,
-  type,
   label,
   isError,
   helperText,
@@ -33,10 +31,10 @@ export const TextField: FC<Props> = ({
       <FormLabel fontWeight={'bold'} color={isError ? '#E53E3E' : undefined}>
         {label}
       </FormLabel>
-      <Input
+      <Textarea
         {...register(name)}
-        type={type}
         focusBorderColor={isError ? '#E53E3E' : undefined}
+        resize={'none'}
       />
       {!isError ? (
         <>{helperText && <FormHelperText>{helperText}</FormHelperText>}</>
