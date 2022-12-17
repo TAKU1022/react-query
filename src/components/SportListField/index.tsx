@@ -36,7 +36,6 @@ export const SportListField: FC = () => {
           columnGap={4}
           flexWrap={'wrap'}
           maxWidth={600}
-          paddingBottom={4}
         >
           {itemList.map((item) => (
             <CheckBoxField

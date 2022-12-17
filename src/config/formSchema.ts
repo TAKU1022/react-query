@@ -13,6 +13,7 @@ export const formSchema = z.object({
     .string()
     .array()
     .nonempty({ message: 'スポーツを選択してください' }),
+  fruit: z.string().min(1, { message: '果物を選択してください' }),
   isDraft: z.boolean(),
 });
 
