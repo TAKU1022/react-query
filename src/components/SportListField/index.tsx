@@ -1,7 +1,7 @@
 import { CheckboxGroup, Flex, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { FormType } from '../../config/formSchema';
+import { FormType } from '../../config/schema';
 import { CheckBoxField } from '../CheckBoxField';
 
 export const SportListField: FC = () => {

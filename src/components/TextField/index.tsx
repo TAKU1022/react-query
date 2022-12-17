@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react';
 import { FC } from 'react';
 import { UseFormRegister } from 'react-hook-form';
-import { FormType } from '../../config/formSchema';
+import { FormType } from '../../config/schema';
 
 type Props = {
   name: keyof FormType;

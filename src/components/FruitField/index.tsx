@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { FormType } from '../../config/formSchema';
+import { FormType } from '../../config/schema';
 import { SelectField } from '../SelectField';
 
 export const FruitField: FC = () => {

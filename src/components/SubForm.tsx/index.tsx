@@ -2,7 +2,7 @@ import { Button, Center, Heading, VStack } from '@chakra-ui/react';
 import { FC, useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { formSchema, FormType } from '../../config/formSchema';
+import { formSchema, FormType } from '../../config/schema';
 import { TitleField } from '../TitleField';
 import { DescriptionField } from '../DescriptionField';
 import { DraftField } from '../DraftField';

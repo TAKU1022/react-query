@@ -1,7 +1,7 @@
 import { Box, Flex } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { FormType } from '../../config/formSchema';
+import { FormType } from '../../config/schema';
 import { TextField } from '../TextField';
 
 export const DateField: FC = () => {
