@@ -3,9 +3,10 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import NextLink from 'next/link';
 import { Box, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react';
+import { DummyApiType } from '../../config/schema';
 
 export const Home: FC = () => {
-  const { data, isLoading } = useQuery(['articles'], () =>
+  const { data, isLoading } = useQuery<DummyApiType>(['articles'], () =>
     axios
       .get(`${process.env.API_BASE_URL}/articles`)
       .then((response) => response.data)
@@ -18,10 +19,9 @@ export const Home: FC = () => {
       </Heading>
 
       <Box marginBottom={6}>
-        {!isLoading &&
-          data.map((article: any) => (
-            <Text key={article.title}>{article.title}</Text>
-          ))}
+        {data &&
+          !isLoading &&
+          data.map((article) => <Text key={article.text}>{article.text}</Text>)}
       </Box>
 
       <UnorderedList>
