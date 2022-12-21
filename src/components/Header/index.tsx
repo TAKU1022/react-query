@@ -26,7 +26,7 @@ export const Header: FC = () => {
           PRACTICE
         </Text>
       </NextLink> */}
-      {isAuthenticated && (
+      {/* {isAuthenticated && (
         <Button
           type={'button'}
           colorScheme={'teal'}
@@ -35,7 +35,7 @@ export const Header: FC = () => {
         >
           sign out
         </Button>
-      )}
+      )} */}
     </Box>
   );
 };

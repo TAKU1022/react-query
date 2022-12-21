@@ -6,9 +6,9 @@ import { SubForm } from '../../components/SubForm.tsx';
 const SubFormPage: NextPage = () => {
   return (
     <DefaultLayout>
-      <AuthGuard>
-        <SubForm />
-      </AuthGuard>
+      {/* <AuthGuard> */}
+      <SubForm />
+      {/* </AuthGuard> */}
     </DefaultLayout>
   );
 };
