@@ -20,11 +20,12 @@ export const Header: FC = () => {
       paddingX={4}
       paddingY={2}
     >
-      <NextLink href={'/'}>
+      <div />
+      {/* <NextLink href={'/'}>
         <Text fontSize={24} fontWeight={'bold'}>
           PRACTICE
         </Text>
-      </NextLink>
+      </NextLink> */}
       {isAuthenticated && (
         <Button
           type={'button'}
