@@ -2,7 +2,14 @@ import { FC } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import NextLink from 'next/link';
-import { Box, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  Link,
+  ListItem,
+  Text,
+  UnorderedList,
+} from '@chakra-ui/react';
 import { DummyApiType } from '../../config/schema';
 
 export const Home: FC = () => {
@@ -26,10 +33,19 @@ export const Home: FC = () => {
 
       <UnorderedList>
         <ListItem>
-          <NextLink href="/default_form">default form</NextLink>
+          <Link as={NextLink} href="/default_form">
+            default form
+          </Link>
         </ListItem>
         <ListItem>
-          <NextLink href="/sub_form">sub form</NextLink>
+          <Link as={NextLink} href="/sub_form">
+            sub form
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link as={NextLink} href="/suspense">
+            suspense text
+          </Link>
         </ListItem>
       </UnorderedList>
     </>
