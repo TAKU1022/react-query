@@ -8,7 +8,7 @@ import { DummyApiType } from '../../config/schema';
 export const Home: FC = () => {
   const { data, isLoading } = useQuery<DummyApiType>(['articles'], () =>
     axios
-      .get(`${process.env.API_BASE_URL}/articles`)
+      .get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/articles`)
       .then((response) => response.data)
   );
 
