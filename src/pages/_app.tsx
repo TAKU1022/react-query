@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ChakraProvider } from '@chakra-ui/react';
+import { RecoilRoot } from 'recoil';
 
 const queryClient = new QueryClient();
 
@@ -31,11 +32,13 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         clientId="To7hDgfLTJvMjl2tVzgmzcatV2rmdn6S"
         redirectUri={origin}
       >
-        <QueryClientProvider client={queryClient}>
-          <ChakraProvider>
-            <Component {...pageProps} />
-          </ChakraProvider>
-        </QueryClientProvider>
+        <RecoilRoot>
+          <QueryClientProvider client={queryClient}>
+            <ChakraProvider>
+              <Component {...pageProps} />
+            </ChakraProvider>
+          </QueryClientProvider>
+        </RecoilRoot>
       </Auth0Provider>
     </>
   );
