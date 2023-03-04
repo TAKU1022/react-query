@@ -26,16 +26,16 @@ export const Header: FC = () => {
           PRACTICE
         </Text>
       </NextLink> */}
-      {/* {isAuthenticated && (
+      {isAuthenticated && (
         <Button
           type={'button'}
           colorScheme={'teal'}
           variant={'outline'}
-          onClick={() => logout({ returnTo: origin })}
+          onClick={() => logout({ returnTo: `${origin}/default_form` })}
         >
           sign out
         </Button>
-      )} */}
+      )}
     </Box>
   );
 };

@@ -6,9 +6,9 @@ import { Home } from '../components/Home';
 const HomePage: NextPage = () => {
   return (
     <DefaultLayout>
-      {/* <AuthGuard> */}
-      <Home />
-      {/* </AuthGuard> */}
+      <AuthGuard>
+        <Home />
+      </AuthGuard>
     </DefaultLayout>
   );
 };

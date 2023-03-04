@@ -6,9 +6,9 @@ import { DefaultLayout } from '../../components/DefaultLayout';
 const DefaultFormPage: NextPage = () => {
   return (
     <DefaultLayout>
-      <AuthGuard>
-        <DefaultForm />
-      </AuthGuard>
+      {/* <AuthGuard> */}
+      <DefaultForm />
+      {/* </AuthGuard> */}
     </DefaultLayout>
   );
 };
