@@ -12,7 +12,7 @@ export const handlers = [
             height: 100,
             isOwner: false,
             position: 'top',
-            photoUrl: null,
+            photoUrl: 'https://zod.dev/',
             tookAt: null,
           },
           {
