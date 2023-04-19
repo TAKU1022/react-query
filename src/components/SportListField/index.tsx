@@ -49,6 +49,11 @@ export const SportListField: FC = () => {
           ))}
         </Flex>
       </CheckboxGroup>
+      {errors.sportList?.message && (
+        <Text display={'flex'} fontSize={'sm'} color={'red.500'}>
+          {errors.sportList.message}
+        </Text>
+      )}
     </div>
   );
 };

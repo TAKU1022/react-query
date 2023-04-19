@@ -13,7 +13,9 @@ export const formSchema = z
     sportList: z
       .string()
       .array()
-      .refine((sportList) => !!sportList.length),
+      .refine((sportList) => !!sportList.length, {
+        message: 'スポーツを選択してください',
+      }),
     fruit: z.string().min(1, { message: '果物を選択してください' }),
     email: z
       .string()
